@@ -1,0 +1,29 @@
+  // const handleChange = (event) => {
+    //     //const id = event.target.id;
+    //     const Surname = event.target.Surname;
+    //     const Name = event.target.Name;
+    //     const Patronomic = event.target.Patronomic;
+    //     const email = event.target.email;
+    //     const Country = event.target.Country;
+    //     const City = event.target.City;
+    //     const Login = event.target.Login;
+    //     const Password = event.target.Password;
+    //     const value = event.target.value;
+    //     setInputs(values => ({...values, [Surname]: value}));
+
+
+    //     // setInputs(values => ({
+    //     //   ...values,
+    //     //   [Surname]: surnameValue,
+    //     //   [Name]: NameValue,
+    //     //   [Patronomic]: PatronomicValue,
+    //     //   [email]: emailvalue,
+    //     //   [Country]: Countryvalue,
+    //     //   [City]: Cityvalue,
+    //     //   [Login]: Loginvalue,
+    //     //   [Password]: Passwordvalue
+
+    //     // }));
+
+
+    // }

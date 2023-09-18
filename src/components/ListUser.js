@@ -2,8 +2,7 @@ import axios from "axios"
 import '../scss/ListUsers.scss';
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
-import ExportXsls from './ExportXsls';
- 
+
 export default function ListUser() {
  
     const [users, setUsers] = useState([]);
@@ -25,16 +24,9 @@ export default function ListUser() {
         });
     }
 
-
-   
-
-
-
-    
     return (
         <div>
             <div>
-            
             <table class="table">
                 <thead>
                     <tr class="base">
@@ -47,7 +39,6 @@ export default function ListUser() {
                         <th>Город</th>
                         <th>Логин</th>
                         <th>Пароль</th>
-
                         <th>Actions</th>
                     </tr>
                 </thead>
@@ -69,15 +60,13 @@ export default function ListUser() {
                             </td>
                         </tr>
                     )}
-                     
                 </tbody>
                 
             </table>
             <div className="button">
                 <Link to="user/create" className="btn btn-success">Добавить</Link>
             </div>
-            {/* <ExportXsls/> */}
-            </div>
         </div>
+    </div>
     )
 }

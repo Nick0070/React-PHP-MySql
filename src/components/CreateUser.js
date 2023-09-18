@@ -1,44 +1,27 @@
+
 import axios from "axios";
 import '../scss/CreateUser.scss';
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate} from "react-router-dom";
  
 export default function ListUser() {
     const navigate = useNavigate();
- 
     const [inputs, setInputs] = useState([]);
- 
+    
     const handleChange = (event) => {
-        const id = event.target.id;
-        const Surname = event.target.Surname;
-        const Name = event.target.Name;
-        const Patronomic = event.target.Patronomic;
-        const email = event.target.email;
-        const Country = event.target.Country;
-        const City = event.target.City;
-        const Login = event.target.Login;
-        const Password = event.target.Password;
-
-
-
-
-
-        const value = event.target.value;
-        setInputs(values => ({...values, [id]: value}));
+      const name = event.target.name;
+      const value = event.target.value; 
+      setInputs(values => ({...values, [name]: value}));
     }
 
-
-
- 
     const handleSubmit = (event) => {
         event.preventDefault();
- 
         axios.post('http://localhost/react/api/save', inputs).then(function(response){
             console.log(response.data);
             navigate('/');
         });
-         
     }
+
     return (
         <div className="row">
             <div className="col-2"></div>
@@ -46,7 +29,10 @@ export default function ListUser() {
             <h1 className="label">Создать пользователя</h1>
             <form onSubmit={handleSubmit}>
                 <div className="mb-3">
-              
+                  <label className="label">id</label>
+                  <input type="text" className="form-control" name="id" onChange={handleChange} />
+                </div>
+                <div className="mb-3">
                   <label className="label">Фамилия</label>
                   <input type="text" className="form-control" name="Surname" onChange={handleChange} />
                 </div>
@@ -78,7 +64,7 @@ export default function ListUser() {
                   <label className="label">Пароль</label>
                   <input type="text" className="form-control" name="Password" onChange={handleChange} />
                 </div> 
-                <button type="submit" name="add" className="btn btn-primary">Сохранить</button>
+                <button type="submit" name="add"  className="btn btn-primary">Сохранить</button>
             </form>
             </div>
             <div className="col-2"></div>

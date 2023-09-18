@@ -29,7 +29,6 @@ export default function ListUser() {
 
     const handleSubmit = (event) => {
         event.preventDefault();
- 
         axios.put(`http://localhost/react/api/${id}/edit`, inputs).then(function(response){
             console.log(response.data);
             navigate('/');
